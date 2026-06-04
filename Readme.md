@@ -10,8 +10,7 @@ This guide walks you through the entire Seaport workflow — from getting your D
 
 ## Who is this guide for?
 
-This guide is for new users getting started with Seaport. Before you create, build, or deploy anything, you need to understand one thing: **Seaport has two modes, and you can only be in one at a time.**
-
+This guide is for new users getting started with Seaport. Before you create, build, or deploy anything, it's important to understand how access works: Seaport supports both personal and organization modes, and your current URL determines which mode you're using.
 ### The two modes
 
 | Mode | What it is | What lives in it |
