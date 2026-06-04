@@ -412,20 +412,4 @@ npm install @c7/ledger
 ```
 
 ---
-
-## Quick reference
-
-- **DevNet Seaport URL**: https://app.devnet.seaport.to
-- **DevNet wallet**: https://devnet.cantonloop.com (redeem your organizer's invite code)
-- **SDK version lock**: `3.4.11` only
-- **Shared validator**: the `5n sandbox` validator is auto-configured for your team org
-- **Org switcher**: top-left of the top nav (button next to the Seaport logo)
-- **Validator Settings**: gear icon in the sidebar — Personal at `/validator-settings`, org at `/{slug}/validator-settings`. Admin+ can create/edit/delete org configs.
-- **Transfer a project**: open the project → three-dots menu (next to Deploy) → **Transfer Ownership**
-- **CLI cheatsheet**:
-    - `dpm new my-project --template skeleton` — scaffold
-    - `dpm build` — build DAR
-    - `dpm test` — run Daml Script tests
-    - `dpm codegen-js <dar> -o src/generated` — TypeScript bindings
-
 > **Need help?** Post in your hackathon Discord Canton Channel.
