@@ -1,31 +1,25 @@
-# Canton Hackathon Builders — Seaport Guide
+# Canton Builders Seaport Guide
 
 No validator setup. No IP allowlisting.
 
 > **Seaport URL**: https://app.devnet.seaport.to
 
-This guide walks you through the entire Seaport workflow — from getting your DevNet wallet and setting up the Daml SDK, to writing, building, deploying, and exercising contracts on the 5N Seaport shared `5n sandbox` validator.
-
----
+This guide walks you through the entire Seaport workflow from getting your DevNet wallet and setting up the Daml SDK, to writing, building, deploying, and exercising contracts on the 5N Seaport shared `5n sandbox` validator.
 
 ## Who is this guide for?
 
 This guide is for new users getting started with Seaport. Before you create, build, or deploy anything, it's important to understand how access works: Seaport supports both personal and organization modes, and your current URL determines which mode you're using.
+
 ### The two modes
 
 | Mode | What it is | What lives in it |
 |------|------------|------------------|
-| **Personal mode** | Your private workspace, tied to your account. Always available — it is yours the moment you sign in. | Your personal projects, your personal validator configurations, and any contracts you create on those validators. |
-| **Org mode** | A shared workspace owned by a specific **organization (org)**. You can only enter it once an org admin has added you. | That org's projects, its members, its validator configurations, and any contracts created on those validators. |
+| **Personal mode** | Your private workspace, tied to your account. Always available: it is yours the moment you sign in. | Your personal projects, your personal validator configurations, and any contracts you create on those validators. |
+| **Org mode** | A shared workspace owned by a specific **organization (org)**. YOU'LL USE IT FOR THE HACKATHON TO DEPLOY AND BUILD PROJECT, You can only enter it once an org admin has added you. | You'll be able to deploy to that org's validator. |
 
-In both modes you can do the same things — create projects, write Daml, build, deploy, create contracts, exercise choices. The difference is **who can see your work and which validator you deploy to**:
+In both modes you can do the same things: Create Projects, Write Daml, Build, Deploy, Create contracts, exercise choices. The difference is **which validator you deploy to**:
 
-- In **Personal mode**, only you can see your projects, and you deploy to one of *your* validators.
-- In **Org mode**, the org's members can see your projects, and the **Validator** dropdown shows only *that org's* validators.
-
-> **For hackathon builders:** you will be added to your team's org by the organizer. Once you are in, you will see a shared validator called **`5n sandbox`** already configured for your org — no setup required.
-
----
+> **For hackathon builders:** Once you are in, you will see a shared validator called **`5n sandbox`** already configured for your org, no setup required.
 
 ## What is Seaport?
 
@@ -38,34 +32,30 @@ Seaport is a web-based workspace for writing, building, and deploying smart cont
 - **Create live contracts** from deployed packages
 - **Interact with contracts** by exercising choices (actions defined in your smart contract templates)
 
----
 
 ## Step 1: Get Your DevNet Wallet
 
 Before logging into Seaport, you need a DevNet wallet.
 
-1. Ask your organizer for a **DevNet wallet invite code** (check the hackathon's Discord Canton channel).
+1. Ask your organizer for a **DevNet wallet invite code in hackathon's Discord Canton channel.**
+
 2. Go to **https://devnet.cantonloop.com** and redeem the code to create your wallet.
 
 > Once set up, copy your **Party ID** from your wallet profile (looks like `abc123::122...34a`). **Save your Party ID** as your organizer needs it to add you to the right team in Seaport.
 
----
-
 ## Step 2: Log Into Seaport
 
 1. Go to **https://app.devnet.seaport.to**
-2. Log in with your DevNet wallet credentials.
+2. Log in with your Loop DevNet wallet.
 3. Find your hackathon org in the sidebar → navigate to **Teams** → find your team.
 
 #### Inside your team you'll see:
 
 - **Members** — your teammates
 - **Projects** — where your Daml projects live after upload
-- The shared **`5n sandbox`** validator is available to all teams automatically
+- The shared **`5n sandbox`** named DevNet validator, it's available to all teams automatically
 
 > **Don't see your org?** Your organizer needs to add your Party ID first. Contact them and they'll sort it.
-
----
 
 ## Step 3: Choose your mode
 
@@ -73,7 +63,7 @@ Before logging into Seaport, you need a DevNet wallet.
 
 ### The org switcher
 
-The org switcher is the small button in the **top-left of the navigation bar**, next to the Seaport logo. It shows your current mode (e.g. "Personal" or the name of the org you are in). Click it to open a dropdown with three sections:
+The org switcher is the small button in the **top-left of the navigation bar**, next to the Seaport logo. It shows your current mode (e.g. "Personal" or the name of the org you are in(Should be Hackathon Name). Click it to open a dropdown with three sections:
 
 1. **Account** → **Personal** (enter Personal mode)
 2. **Organizations** → every org you belong to (enter that org's mode)
@@ -96,51 +86,7 @@ Once added, the org appears in your org switcher automatically.
 
 > **For hackathon builders:** this is the step your organizer handles for you — give them your Party ID from Step 1 and they will add you to your team's org.
 
----
-
-## Step 4: Set Up Your Dev Environment
-
-### Install the Daml SDK
-
-Canton uses `dpm` (Digital Asset Package Manager) as its build tool.
-
-```bash
-curl https://get.digitalasset.com/install/install.sh | sh
-```
-
-Verify:
-
-```bash
-dpm version
-```
-
-If `dpm` isn't found, add it to your PATH:
-
-```bash
-export PATH="$HOME/.dpm/bin:$PATH"
-```
-
-> **SDK version lock:** Seaport's DevNet environment supports `3.4.11` only. Using a different version will cause DAR upload failures.
-
-### Create a New Project (CLI)
-
-Scaffold from scratch:
-
-```bash
-dpm new my-hackathon-project --template skeleton
-cd my-hackathon-project
-```
-
-Or clone the Canton quickstart (recommended — includes TypeScript backend + React frontend):
-
-```bash
-git clone https://github.com/digital-asset/cn-quickstart
-cd cn-quickstart/quickstart
-```
-
----
-
-## Step 5: Create a Project in Seaport
+## Step 4: Create a Project in Seaport
 
 A project in Seaport is a workspace that holds your Daml files. Once the project exists, you can edit files in the browser, build the project into a DAR, and deploy it.
 
@@ -170,9 +116,7 @@ If you already have a project on GitHub (e.g. the `cn-quickstart` repo from Step
 3. Select a repository and branch to import.
 4. Files will be pulled into a new project automatically.
 
----
-
-## Step 6: Write Your Smart Contract
+## Step 5: Write Your Smart Contract
 
 1. In the **File Explorer** on the left, click on a `.daml` file to open it.
 2. Use the code editor to write your contract template.
@@ -180,44 +124,22 @@ If you already have a project on GitHub (e.g. the `cn-quickstart` repo from Step
 
 You can also write and edit your `.daml` files locally in your favourite editor and just commit them to the GitHub repo that Seaport is connected to.
 
----
+## Step 6: Build Your Project
 
-## Step 7: Build Your Project
-
-A DAR is the deployable artifact equivalent to a compiled smart contract. You can build either from the CLI or from inside Seaport.
-
-### Option A — Build inside Seaport
+A DAR is the deployable artifact equivalent to a compiled smart contract. You can build from inside Seaport:
 
 1. Click **Build Project** in the top bar of your project.
 2. The **OUTPUT** panel at the bottom shows the build progress.
 3. When the build finishes, you will see a success message and the location of the built `.dar` file.
 4. The DAR file appears under the **Builds** folder in the File Explorer.
 
-### Option B — Build from the CLI
-
-From inside your project directory:
-
-```bash
-dpm build
-```
-
-Output: `.daml/dist/<project-name>-<version>.dar`
-
 ### Test locally
 
-Before deploying, unit test your contract logic with Daml Script:
+If the build fails, the output panel will show the error. Fix the code and try again.
 
-```bash
-dpm test
-```
+## Step 7: Configure a Validator
 
-> If the build fails, the output panel will show the error. Fix the code and try again.
-
----
-
-## Step 8: Configure a Validator
-
-> **Most hackathon builders can skip this step.** Your org's shared **`5n sandbox`** validator is set up for you automatically and will appear in the Validator dropdown the first time you deploy. If you do not see it, ask your organizer to verify your org membership.
+> **HACKATHON BUILDERS CAN SKIP THIS STEP.** Your org's shared **`5n sandbox`** DevNet validator is set up for you automatically and will appear in the Validator dropdown the first time you deploy. If you do not see it, ask your organizer to verify your org membership.
 
 If you ever do need to add a custom validator (for example, a private validator your team hosts), here's how:
 
@@ -255,22 +177,9 @@ The page title is **Validator Settings**. The subtitle reads either *Configure V
 - **Edit**: click **Edit** on a row. Leave the **Client Secret** blank to keep the current secret.
 - **Delete**: click **Delete** and confirm. Existing contracts on that validator are **not** affected, but you will no longer be able to deploy new packages or create new contracts against it from this mode.
 
-### Permissions
-
-| Action | Personal | Org |
-|--------|----------|-----|
-| View configurations | Anyone signed in | Viewer and above |
-| Create / edit / delete | The owner | **Admin and above** (Owner can do everything) |
-
----
-
-## Step 9: Deploy to a Validator
+## Step 8: Deploy to a Validator
 
 Deploying uploads your built DAR file to a Canton validator so it can be used on the network.
-
-> **The Validator dropdown shows only the validators for your current mode.** In Org mode you see that org's validators (including the shared `5n sandbox`); in Personal mode you see your personal validators. If the validator you expect is missing, switch the org switcher to the correct mode, or have an Admin add it in Validator Settings.
-
-### Via the Seaport UI
 
 1. Click **Deploy** in the top bar of your project.
 2. The **Deploy** modal opens showing:
@@ -281,15 +190,13 @@ Deploying uploads your built DAR file to a Canton validator so it can be used on
 5. Wait for the deployment to finish. On success, the modal confirms the deployment.
 6. Close the modal — your DAR is now live on the chosen validator.
 
-> **Tip:** deploy to the validator your org admin specified. If you are unsure which one, ask in your hackathon Discord Canton channel.
+> **Tip:** deploy to the validator your org admin specified. If you are unsure which one, ask in your Hackathon Discord Canton channel.
 
----
-
-## Step 10: Create a Contract
+## Step 9: Create a Contract
 
 Now that your DAR is deployed, you can create an actual contract instance from one of its templates.
 
-> **The validator selector on this page also only shows validators for your current mode.** Switch to the org you want to create the contract in before continuing.
+> **The validator selector on this page also only shows validators for your current mode.**
 
 ### Open the Contract Factory
 
@@ -312,13 +219,11 @@ The Contract Factory has several sections:
 5. A log panel on the right shows the creation request and result.
 6. On success, you will see the new **Contract ID** — this is your live, on-ledger contract.
 
----
-
-## Step 11: Exercise a Choice
+## Step 10: Exercise a Choice
 
 A "choice" is an action you can perform on a contract — think of it as a button you press to change or end the contract's state.
 
-### 11.1 — Find your contract
+### 10.1 — Find your contract
 
 After inspecting a DAR file and selecting a template, scroll down to the **ACTIVE CONTRACTS** section. You will see a table with these columns:
 
@@ -332,14 +237,14 @@ After inspecting a DAR file and selecting a template, scroll down to the **ACTIV
 
 > **The active contracts list also shows only contracts from your current mode's validators.** To see contracts on a different validator, switch the org switcher.
 
-### 11.2 — Pick a choice
+### 10.2 — Pick a choice
 
 Find the contract you want to interact with and click the **○ Choice** button in the rightmost column.
 
 - If the template has **one available action**, you go straight to the execution form.
 - If the template has **multiple actions**, a dropdown appears — pick the choice you want to execute.
 
-### 11.3 — Fill in and execute
+### 10.3 — Fill in and execute
 
 The view switches to **Contract Detail** mode with two panels:
 
@@ -348,7 +253,7 @@ The view switches to **Contract Detail** mode with two panels:
 
 Fill in the required fields, then click **Execute \<ChoiceName\>** to submit the transaction.
 
-### 11.4 — After execution
+### 10.4 — After execution
 
 The contract list refreshes automatically. What happens depends on the choice type:
 
@@ -359,9 +264,7 @@ The contract list refreshes automatically. What happens depends on the choice ty
 
 > **For hackathon builders:** every create, exercise, and archive on your team's contracts is recorded in your org's **Contracts** tab — judges and teammates can see the full history there.
 
----
-
-## Step 12: Transfer Project Ownership
+## Step 11: Transfer Project Ownership
 
 Use this when a project you started in one mode needs to live in another — most commonly:
 
@@ -388,8 +291,6 @@ A toast confirms the transfer, and the project is removed from its old mode and 
 
 > **What gets transferred:** the project, its files, its builds, and any contract state attached to the project's DARs. The previous mode's members lose live-edit access immediately.
 
----
-
 ## Reference: Building a TypeScript/React Frontend
 
 > This section is optional. You can use Seaport's **Contracts** tab to create, browse, and exercise choices on your contracts without writing any frontend code — full contract history (every create, exercise, archive) is visible there.
@@ -410,5 +311,4 @@ Use `@c7/ledger` (the current Canton client SDK, not the deprecated `@daml/ledge
 npm install @c7/ledger
 ```
 
----
 > **Need help?** Post in your hackathon Discord Canton Channel.
