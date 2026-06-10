@@ -35,11 +35,7 @@ Seaport is a web-based workspace for writing, building, and deploying smart cont
 
 ## Step 1: Get Your DevNet Wallet
 
-Before logging into Seaport, you need a DevNet wallet.
-
-1. Ask your organizer for a **DevNet wallet invite code in hackathon's Discord Canton channel.**
-
-2. Go to **https://devnet.cantonloop.com** and redeem the code to create your wallet.
+Before logging into Seaport, you need a DevNet wallet. Go to **https://devnet.cantonloop.com** to create your loop wallet.
 
 > Once set up, copy your **Party ID** from your wallet profile (looks like `abc123::122...34a`). **Save your Party ID** as your organizer needs it to add you to the right team in Seaport.
 
